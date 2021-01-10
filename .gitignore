@@ -10,6 +10,7 @@
 
 # production
 /build
+/public/sound_files
 
 # misc
 .DS_Store
