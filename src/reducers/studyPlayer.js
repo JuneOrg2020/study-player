@@ -13,6 +13,11 @@ const initialAppState = {
     nextPlayFlagString: "Loop【Next】",
     saveFileString: "",
   },
+  // review
+  reviewPlayer: {
+    files: [],
+    deleteFileString: "",
+  },
   // select
   selectSoundNumber: 0,
   soundList: [],
@@ -47,6 +52,12 @@ const studyPlayer = (state = initialAppState, action) => {
     return {
       ...state,
       mainPlayer: action.state
+    };
+  } else if (action.type === actionTypes.PushStateReviewPlayer) {
+
+    return {
+      ...state,
+      reviewPlayer: action.state
     };
   } else {
     return state;

@@ -5,13 +5,12 @@ export const onDropSoundFile = (files) => ({
   files,
 });
 
-export const onClickRegisterSoundFile = (files) => ({
-　type: actionTypes.RegisterSoundFile,
-　files,
-});
-
 export const PushStateMainPlayer = (state) => ({
 　type: actionTypes.PushStateMainPlayer,
   state,
 });
-    
+
+export const PushStateReviewPlayer = (state) => ({
+　type: actionTypes.PushStateReviewPlayer,
+  state,
+});

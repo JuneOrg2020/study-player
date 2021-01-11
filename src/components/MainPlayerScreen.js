@@ -36,8 +36,6 @@ class MainPlayerScreen extends Component {
     this.state.mainPlayer.currentPlayFileName = this.files[this.playNumber];
     this.state.mainPlayer.volume = this.data.volume;
     this.state.mainPlayer.speed = this.data.speed;
-    console.log("main constructer");
-
   }
 
   makePlaySrc() {
@@ -54,6 +52,9 @@ class MainPlayerScreen extends Component {
   }
 
   PlaySoundByNumber(playNumber) {
+    if(this.files.length === 0) {
+      return;
+    }
     this.playNumber = playNumber;
     this.audio.current.src = this.makePlaySrc();
     this.audio.current.volume = this.state.mainPlayer.volume;
@@ -70,9 +71,13 @@ class MainPlayerScreen extends Component {
   }
 
   AudioEndWork() {
+    if(this.files.length === 0) {
+       return;
+    }
+
     if (this.nextPlayFlag) {
         this.playNumber++;
-        if(this.files.length === this.playNumber){
+        if(this.files.length <= this.playNumber){
             this.playNumber = 0;
         }
         this.PlaySoundByNumber(this.playNumber);
@@ -162,6 +167,7 @@ class MainPlayerScreen extends Component {
     saveNo = saveNo ? parseInt(saveNo) + 1 : 1;
     
     const saveData = {
+      saveNo : saveNo,
       title : this.playTitle,
       fileName : this.files[this.playNumber],
       startTime: this.audio.current.currentTime,
@@ -173,7 +179,7 @@ class MainPlayerScreen extends Component {
 
     const mnt = Math.round(this.audio.current.currentTime/60);
     const scnd = Math.round(this.audio.current.currentTime - mnt*60)
-    this.state.mainPlayer.saveFileString = "you saved from " + ( '00' + mnt ).slice( -2 )+":"+( '00' + scnd ).slice( -2 );
+    this.state.mainPlayer.saveFileString = "you saved "+this.files[this.playNumber]+" from " + ( '00' + mnt ).slice( -2 )+":"+( '00' + scnd ).slice( -2 );
     this.actions.PushStateMainPlayer(this.state.mainPlayer);
   }
 
@@ -196,7 +202,7 @@ class MainPlayerScreen extends Component {
           <audio
           className="audio-area"
           ref={this.audio}
-          src={"sound_files/"+this.playTitle+"/"+this.files[this.playNumber]}
+          src=""
           onPlay={() => this.PlaySound()}
           onEnded={() => this.AudioEndWork()}
           onLoadedData={() => this.LoadedPlay()}
@@ -211,8 +217,8 @@ class MainPlayerScreen extends Component {
             <button>{studyPlayer.mainPlayer.speed}</button>
             <button onClick={(code) => this.ChangeSpeed(1)}>SpeedUp</button>
             <br/>
-            <button onClick={(Amt) => this.SpeedChangeTo(125)}>1.25</button>
-            <button onClick={(Amt) => this.SpeedChangeTo(150)}>1.5</button>
+            <button onClick={(Amt) => this.ChangeSpeedTo(125)}>1.25</button>
+            <button onClick={(Amt) => this.ChangeSpeedTo(150)}>1.5</button>
           </div>
           <div className="button-space">
             <button onClick={() => this.ChangeNextFlag()}>{studyPlayer.mainPlayer.nextPlayFlagString}</button>
