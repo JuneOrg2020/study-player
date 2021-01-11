@@ -1,8 +1,8 @@
 import * as actionTypes from '../utils/actionTypes';
 
-export const onDropSoundFile = (files) => ({
-  type: actionTypes.DropSoundFile,
-  files,
+export const PushStateInputFile = (state) => ({
+  type: actionTypes.PushStateInputFile,
+  state,
 });
 
 export const PushStateMainPlayer = (state) => ({

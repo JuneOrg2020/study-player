@@ -22,30 +22,19 @@ const initialAppState = {
   selectSoundNumber: 0,
   soundList: [],
   // input
-  title: "",
-  dropFiles: [],
+  inputFile: {
+    title: "",
+    dropFiles: [],
+  },
 };
 
 const studyPlayer = (state = initialAppState, action) => {
 
-  if (action.type === actionTypes.DropSoundFile) {    
-
-    const dropFiles = state.dropFiles.slice();
-    
-    for (let f in action.files) {
-      if (action.files[f].name == undefined) {
-        break;
-      }
-      const result = dropFiles.find(item => item == action.files[f].name);
-
-      if (result == undefined) {
-        dropFiles.push(action.files[f].name);
-      }
-    }
+  if (action.type === actionTypes.PushStateInputFile) {    
 
     return {
       ...state,
-      dropFiles: dropFiles,
+      state: action.state,
     };
   } else if (action.type === actionTypes.PushStateMainPlayer) {
 

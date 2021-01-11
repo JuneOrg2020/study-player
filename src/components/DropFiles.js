@@ -7,7 +7,7 @@ class DropFiles extends Component {
     
     for (let i=0;i<this.props.files.length;i++) {
       allFiles.push(
-        <div className="drop-file" key={i}>
+        <div className="drop-file" onClick={(fileNumber) => this.props.onClick(i)} key={i}>
           {this.props.files[i]}
         </div>
       );
