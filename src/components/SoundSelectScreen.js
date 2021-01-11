@@ -3,6 +3,11 @@ import {Link} from 'react-router-dom';
 
 class SoundSelectScreen extends Component {
   
+  constructor(prop) {
+    super(prop);
+    
+  }
+
   SelectSound(id) {
     const { studyPlayer, actions } = this.props.parent;
     studyPlayer.selectSoundNumber = id;

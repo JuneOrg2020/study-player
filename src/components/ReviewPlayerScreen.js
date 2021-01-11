@@ -88,7 +88,7 @@ class ReviewPlayerScreen extends MainPlayerScreen {
     this.state.reviewPlayer.files.splice(this.playNumber, 1);
 
     !this.nextPlayFlag ? ChangeNextFlag() : null;
-    this.AudioEndWork();
+    this.ChangePlay(1);
     this.actions.PushStateReviewPlayer(this.state.reviewPlayer);
   }
 

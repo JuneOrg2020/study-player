@@ -36,6 +36,24 @@ class MainPlayerScreen extends Component {
     this.state.mainPlayer.currentPlayFileName = this.files[this.playNumber];
     this.state.mainPlayer.volume = this.data.volume;
     this.state.mainPlayer.speed = this.data.speed;
+
+    this.bindKeyDownAction = this.KeyDownAction.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener(
+      "keydown",
+      this.bindKeyDownAction,
+      false
+    );
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener(
+       "keydown",
+       this.bindKeyDownAction,
+       false
+    );
   }
 
   makePlaySrc() {
@@ -102,14 +120,6 @@ class MainPlayerScreen extends Component {
     this.StoreLocalStorage();
     this.state.mainPlayer.startPointString = "Start from 00:00";
     this.actions.PushStateMainPlayer(this.state.mainPlayer);
-  };
-
-  SpaceAction() {
-    this.audio.current.paused ? this.audio.current.play() : this.audio.current.pause();
-  };
-
-  MovePoint(code) {
-    this.audio.current.currentTime = this.audio.current.currentTime + this.moveAmt*code;
   };
 
   ChangeSpeed(code){
@@ -181,6 +191,39 @@ class MainPlayerScreen extends Component {
     const scnd = Math.round(this.audio.current.currentTime - mnt*60)
     this.state.mainPlayer.saveFileString = "you saved "+this.files[this.playNumber]+" from " + ( '00' + mnt ).slice( -2 )+":"+( '00' + scnd ).slice( -2 );
     this.actions.PushStateMainPlayer(this.state.mainPlayer);
+  }
+
+  SpaceAction() {
+    this.audio.current.paused ? this.audio.current.play() : this.audio.current.pause();
+  };
+
+  ChangePlay(code) {
+    this.playNumber += code;
+    if(this.files.length <= this.playNumber){
+      this.playNumber = 0;
+    } else if (0 > this.playNumber) {
+      this.playNumber = this.files.length - 1;
+    }
+    this.PlaySoundByNumber(this.playNumber);
+  }
+
+  MovePoint(code) {
+    this.audio.current.currentTime = this.audio.current.currentTime + this.moveAmt*code;
+  };
+
+  LoopPlay() {
+    this.audio.current.currentTime = this.startPoint;
+  }
+
+  KeyDownAction(e) {
+    const keyName = e.key;
+         if (keyName == ' ') this.SpaceAction();
+    else if (keyName == 'l') this.LoopPlay();
+    else if (keyName == 'b') this.ChangePlay(-1);
+    else if (keyName == 'n') this.ChangePlay(1);
+    else if (keyName == 'p') this.SetStartPoint();
+    else if (keyName == 'ArrowRight') this.MovePoint(1);
+    else if (keyName == 'ArrowLeft') this.MovePoint(-1);
   }
 
   render() {
