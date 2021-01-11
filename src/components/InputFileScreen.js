@@ -40,9 +40,11 @@ class InputFileScreen extends Component {
 
     return (
         <div>
-            <h1>Sound File Input</h1>
-            <button className="register-button" onClick={() => this.RegisterFiles()} >Register Files</button>
-            Title:<input type="text" className="files-title" onChange={(e) => {studyPlayer.title = e.target.value}} />
+            <h1>Input Sound File</h1>
+            <button className="register-button button-1" onClick={() => this.RegisterFiles()} >Register Files</button>
+            <div>
+                Directory Name:<input type="text" className="files-title" onChange={(e) => {studyPlayer.title = e.target.value}} />
+            </div>
             <div className="upload_area">
             <div className="drop_area"
                 onDragOver={(e) => this.DragOverAction(e)}
@@ -50,6 +52,7 @@ class InputFileScreen extends Component {
                 Please drag and drop file here
             </div>
             </div>
+            <h1>Droped Files</h1>
             If you'd like to delete a file below, please click the target file.
             <div className="file-input-list">
             <DropFiles 

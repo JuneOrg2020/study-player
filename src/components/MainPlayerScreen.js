@@ -165,7 +165,7 @@ class MainPlayerScreen extends Component {
       title : this.playTitle,
       fileName : this.files[this.playNumber],
       startTime: this.audio.current.currentTime,
-      volume : this.state.volume,
+      volume : this.state.mainPlayer.volume,
     }
 
     ls.setItem("RV_"+saveNo, JSON.stringify(saveData));
@@ -183,41 +183,52 @@ class MainPlayerScreen extends Component {
 
     for (let i=0;i<this.files.length;i++) {
       SoundFileView.push(
-        <button className="sound-list-item" onClick={(playNumber) => this.PlaySoundByNumber(i)} key={i}>
+        <div className="sound-item" onClick={(playNumber) => this.PlaySoundByNumber(i)} key={i}>
           {this.files[i]}
-        </button>
+        </div>
       );
     }
 
     return (
       <div>
-        <div>{this.playTitle} CurrentPlay:{studyPlayer.mainPlayer.currentPlayFileName}</div>
-        <audio
+        <div className="header-area">
+          <div>{this.playTitle} CurrentPlay:{studyPlayer.mainPlayer.currentPlayFileName}</div>
+          <audio
+          className="audio-area"
           ref={this.audio}
           src={"sound_files/"+this.playTitle+"/"+this.files[this.playNumber]}
           onPlay={() => this.PlaySound()}
           onEnded={() => this.AudioEndWork()}
           onLoadedData={() => this.LoadedPlay()}
           controls="controls"
-        ></audio>
-        <button onClick={(code) => this.ChangeVolume(-1)}>-</button>
-        <button>Vol {studyPlayer.mainPlayer.volume}</button>
-        <button onClick={(code) => this.ChangeVolume(1)}>+</button>
-        
-        <button onClick={(code) => this.ChangeSpeed(-1)}>SpeedDown</button>
-        <button>{studyPlayer.mainPlayer.speed}</button>
-        <button onClick={(code) => this.ChangeSpeed(1)}>SpeedUp</button>
-        <button onClick={(Amt) => this.SpeedChangeTo(125)}>1.25</button>
-        <button onClick={(Amt) => this.SpeedChangeTo(150)}>1.5</button>
-        
-        <button onClick={() => this.SetStartPoint()}>SetStartPoint</button>
-        <button onClick={() => this.ResetStartPoint()}>ResetStartPoint</button>
-        <div className="start-point-string">{studyPlayer.mainPlayer.startPointString}</div>
-        
-        <button onClick={() => this.ChangeNextFlag()}>{studyPlayer.mainPlayer.nextPlayFlagString}</button>
-        <button onClick={() => this.SaveThisFile()}>Save This File</button>
-        <div className="save-this-file-string">{studyPlayer.mainPlayer.saveFileString}</div>
-        {SoundFileView}
+          ></audio>
+          <div className="button-space">
+            <button onClick={(code) => this.ChangeVolume(-1)}>-</button>
+            <button>Vol {studyPlayer.mainPlayer.volume}</button>
+            <button onClick={(code) => this.ChangeVolume(1)}>+</button>
+            <br/>
+            <button onClick={(code) => this.ChangeSpeed(-1)}>SpeedDown</button>
+            <button>{studyPlayer.mainPlayer.speed}</button>
+            <button onClick={(code) => this.ChangeSpeed(1)}>SpeedUp</button>
+            <br/>
+            <button onClick={(Amt) => this.SpeedChangeTo(125)}>1.25</button>
+            <button onClick={(Amt) => this.SpeedChangeTo(150)}>1.5</button>
+          </div>
+          <div className="button-space">
+            <button onClick={() => this.ChangeNextFlag()}>{studyPlayer.mainPlayer.nextPlayFlagString}</button>
+            <br/>
+            <button onClick={() => this.SetStartPoint()}>SetStartPoint</button>
+            <button onClick={() => this.ResetStartPoint()}>ResetStartPoint</button>
+            <div className="start-point-string">{studyPlayer.mainPlayer.startPointString}</div>
+          </div>
+          <div className="button-space">
+            <button onClick={() => this.SaveThisFile()}>Save This File</button>
+            <div className="save-this-file-string">{studyPlayer.mainPlayer.saveFileString}</div>
+          </div>
+        </div>
+        <div className="sound-list">
+          {SoundFileView}
+        </div>
       </div>
     );
 

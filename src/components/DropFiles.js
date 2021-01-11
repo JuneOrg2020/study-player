@@ -7,9 +7,9 @@ class DropFiles extends Component {
     
     for (let i=0;i<this.props.files.length;i++) {
       allFiles.push(
-        <button className="drop-file" key={i}>
+        <div className="drop-file" key={i}>
           {this.props.files[i]}
-        </button>
+        </div>
       );
     }
 

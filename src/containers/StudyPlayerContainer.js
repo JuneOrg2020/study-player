@@ -33,12 +33,17 @@ class StudyPlayerContainer extends Component {
   render() {
     return (
       <HashRouter>
-        <Link to='/'><div className="menu-button">Menu</div></Link>
-        <Route exact path='/'      render={() => <MenuScreen parent={this.props}/> } />   
-        <Route exact path='/input' render={() => <InputFileScreen parent={this.props}/> } />
-        <Route exact path='/select' render={() => <SoundSelectScreen parent={this.props}/> } />
-        <Route exact path='/main' render={() => <MainPlayerScreen parent={this.props}/> } />
-        <Route exact path='/review' render={() => <ReviewPlayerScreen parent={this.props}/> } />
+        <div className="menu-area">
+          <Link to='/'><div className="menu-button">Menu</div></Link>
+        </div>
+        <div className="content-area">
+          <Route exact path='/'      render={() => <MenuScreen parent={this.props}/> } />   
+          <Route exact path='/input' render={() => <InputFileScreen parent={this.props}/> } />
+          <Route exact path='/select' render={() => <SoundSelectScreen parent={this.props}/> } />
+          <Route exact path='/main' render={() => <MainPlayerScreen parent={this.props}/> } />
+          <Route exact path='/review' render={() => <ReviewPlayerScreen parent={this.props}/> } />
+          <div className="footer-area"></div>
+        </div>
       </HashRouter>
     );
   }
