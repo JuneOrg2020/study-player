@@ -9,9 +9,9 @@ class MenuScreen extends Component {
     return (
         <div>
             <h1>Menu Select</h1>
-            <button className="menu-item"><Link to='/input'>Input Sound File</Link></button>
-            <button className="menu-item"><Link to='/select'>Sound Select</Link></button>
-            <button className="menu-item"><Link to='/review'>Review Saved Part</Link></button>
+            <Link to='/input'><div className="menu-item">Input Sound File</div></Link>
+            <Link to='/select'><div className="menu-item">Sound Select</div></Link>
+            <Link to='/review'><div className="menu-item">Review Saved Part</div></Link>
         </div>
     );
   }

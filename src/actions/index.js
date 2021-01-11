@@ -1,17 +1,21 @@
 import * as actionTypes from '../utils/actionTypes';
 
-export const onDropSoundFile = (files) => ({
-  type: actionTypes.DropSoundFile,
-  files,
+export const PushStateInputFile = (state) => ({
+  type: actionTypes.PushStateInputFile,
+  state,
 });
 
-export const onClickRegisterSoundFile = (files) => ({
-　type: actionTypes.RegisterSoundFile,
-　files,
+export const PushStateSoundList = (list) => ({
+    type: actionTypes.PushStateSoundList,
+    list,
 });
 
 export const PushStateMainPlayer = (state) => ({
 　type: actionTypes.PushStateMainPlayer,
   state,
 });
-    
+
+export const PushStateReviewPlayer = (state) => ({
+　type: actionTypes.PushStateReviewPlayer,
+  state,
+});
