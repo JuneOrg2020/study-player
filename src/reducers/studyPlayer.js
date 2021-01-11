@@ -36,7 +36,13 @@ const studyPlayer = (state = initialAppState, action) => {
       ...state,
       state: action.state,
     };
-  } else if (action.type === actionTypes.PushStateMainPlayer) {
+  } else if (action.type === actionTypes.PushStateSoundList) {
+
+    return {
+      ...state,
+      soundList: action.list
+    };
+  }  else if (action.type === actionTypes.PushStateMainPlayer) {
 
     return {
       ...state,

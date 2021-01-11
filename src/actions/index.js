@@ -5,6 +5,11 @@ export const PushStateInputFile = (state) => ({
   state,
 });
 
+export const PushStateSoundList = (list) => ({
+    type: actionTypes.PushStateSoundList,
+    list,
+});
+
 export const PushStateMainPlayer = (state) => ({
 　type: actionTypes.PushStateMainPlayer,
   state,

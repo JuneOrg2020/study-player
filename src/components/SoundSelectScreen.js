@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class SoundSelectScreen extends Component {
   
@@ -24,6 +25,7 @@ class SoundSelectScreen extends Component {
     return (
       <div>
         <h1>Sound Select</h1>
+        <Link to='/delete-sound'><div className="button-2">Delete Sound</div></Link>
         {SoundListView}
       </div>
     );
