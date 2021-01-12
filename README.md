@@ -34,12 +34,12 @@ And input the directory name(TOEIC_SAMPLE_1). Then you click the register button
 
 # Keyboard Operation 
 
-* Space key :to stop or replay sound.<br/>
-* L key :to playback the sound.<br/>
-* ←key or →key :to move play position.<br/>
-* B key :to play a previous sound file.<br/>
-* N key :to play a next sound file.<br/>
-* P key :to set the play start position.<br/>
+* Space key<br/>To stop or replay sound.<br/>
+* L key<br/>To playback the sound.<br/>
+* ←key or →key<br/>To move play position.<br/>
+* B key<br/>To play a previous sound file.<br/>
+* N key<br/>To play a next sound file.<br/>
+* P key<br/>To set the play start position.<br/>
 
 # Note
 
