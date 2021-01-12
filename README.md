@@ -9,7 +9,7 @@ This App's data is managed on Browser(localStorage).
 * It can control the play speed.
 * It can save the volume for each voice.
 * It can play the sound file from position that you set. <br/>
-For example, when you set the position at 00:04, if you push the playback key, this player start from 00:04 instead of 00:00.  
+For example, when you set the position at 00:04, if you push the playback key, this player starts from 00:04 instead of 00:00.  
 * It can save the sound file with play position and play volume. Saved files can be played on Review Page.
 
 # Usage
@@ -18,14 +18,14 @@ First, you need to place sound files under the directory called sound_files.
 
 **Example**<br/>
 public <br/>
-├sound_files/<br/>
+├─sound_files/<br/>
 │    └**TOEIC_SAMPLE_1/**<br/>
-│         ├─**sample1.mp3**<br/>
-│         ├─**sample2.mp3**<br/>
-│          .<br/>
-│          .<br/>
-├src/<br/>
-├index.html<br/>
+│　　　　　├─**sample1.mp3**<br/>
+│　　　　　├─**sample2.mp3**<br/>
+│ 　　　　　.<br/>
+│ 　　　　　.<br/>
+├─src/<br/>
+├─index.html<br/>
 <br/>
 
 * Input Sound File Page <br/>
