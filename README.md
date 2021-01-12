@@ -2,12 +2,12 @@
 This App is a player used for learning English such as TOEIC. <br/>
 This App's data is managed on Browser(localStorage).
 
-<img src="" width="760px">
+<img src="https://user-images.githubusercontent.com/64642177/104330083-fe68bc00-5530-11eb-8f9f-fc0b8af425da.png" width="760px">
 
 # Features
 
 * It can control the play speed.
-* It can save the volume for each voice.
+* It can save the volume for each sound file.
 * It can play the sound file from position that you set. <br/>
 For example, when you set the position at 00:04, if you press the playback key, this player starts from 00:04 instead of 00:00.  
 * It can save the sound file with play position and play volume. Saved files can be played on Review Page.
