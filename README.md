@@ -1,4 +1,4 @@
-# StudyPlayerByReact
+# StudyPlayer
 This App is a player used for learning English such as TOEIC. <br/>
 This App's data is managed on Browser(localStorage).
 
