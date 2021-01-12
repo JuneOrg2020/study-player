@@ -35,7 +35,6 @@ class DeleteSoundScreen extends Component {
     return (
       <div>
         <h1>Delete Sound</h1>
-        <Link to='/select'><div className="button-1">Sound Select</div></Link>
         {SoundListView}
       </div>
     );

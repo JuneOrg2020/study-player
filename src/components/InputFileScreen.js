@@ -29,7 +29,7 @@ class InputFileScreen extends Component {
     
     const data = {
       id: fMax,
-      title: studyPlayer.title,
+      title: studyPlayer.inputFile.title,
       volume: 0.5,
       speed: 1.0,
       startPoint: 0,
