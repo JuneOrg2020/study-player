@@ -8,7 +8,7 @@ This App's data is managed on Browser(localStorage).
 
 * It can control the play speed.
 * It can save the volume for each voice.
-* It can play the sound file from position that you set. 
+* It can play the sound file from position that you set. <br/>
 For example, when you set the position at 00:04, if you push the playback key, this player start from 00:04 instead of 00:00.  
 * It can save the sound file with play position and play volume. Saved files can be played on Review Page.
 
@@ -16,7 +16,7 @@ For example, when you set the position at 00:04, if you push the playback key, t
 
 First, you need to place sound files under the directory called sound_files.
 
-Example<br/>
+**Example**<br/>
 public <br/>
 ├sound_files/<br/>
 │    └**TOEIC_SAMPLE_1/**<br/>
@@ -34,12 +34,12 @@ And input the directory name(TOEIC_SAMPLE_1). Then you click the register button
 
 # Keyboard Operation 
 
-*To push the Space key is to stop or replay sound.
-*To push the L key is to playback the sound.
-*To push the ←key or →key is to move play position.
-*To push the B key is to play a previous sound file.
-*To push the N key is to play a next sound file.
-*To push the P key is to set the play start position.
+* To push the Space key is to stop or replay sound.<br/>
+* To push the L key is to playback the sound.<br/>
+* To push the ←key or →key is to move play position.<br/>
+* To push the B key is to play a previous sound file.<br/>
+* To push the N key is to play a next sound file.<br/>
+* To push the P key is to set the play start position.<br/>
 
 # Note
 
