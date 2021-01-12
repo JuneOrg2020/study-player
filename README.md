@@ -30,6 +30,7 @@ public <br/>
 
 * Input Sound File Page <br/>
 Please drag&drop sound files(sample*.mp3) that you have placed before. <br/>
+You can drag&drop multiple file.<br/>
 And input the directory name(TOEIC_SAMPLE_1). Then you click the register button. <br/>
 
 # Keyboard Operation 
