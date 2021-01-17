@@ -37,12 +37,12 @@ Finally, please access public/index.html by Chrome.
 
 # Keyboard Operation 
 
-* Space key<br/>To stop or replay sound.<br/>
-* L key<br/>To playback the sound.<br/>
-* ←key or →key<br/>To move play position.<br/>
-* B key<br/>To play a previous sound file.<br/>
-* N key<br/>To play a next sound file.<br/>
-* P key<br/>To set the play start position.<br/>
+* <kbd>Space</kbd><br/>To stop or replay sound.<br/>
+* <kbd>L</kbd><br/>To playback the sound.<br/>
+* <kbd>←</kbd> <kbd>→</kbd>To move play position.<br/>
+* <kbd>B</kbd><br/>To play a previous sound file.<br/>
+* <kbd>N</kbd><br/>To play a next sound file.<br/>
+* <kbd>P</kbd><br/>To set the play start position.<br/>
 
 # Note
 
