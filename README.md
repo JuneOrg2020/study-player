@@ -2,7 +2,7 @@
 This App is a player used for learning English such as TOEIC. <br/>
 This App's data is managed on Browser(localStorage).
 
-<img src="https://user-images.githubusercontent.com/64642177/104330083-fe68bc00-5530-11eb-8f9f-fc0b8af425da.png" width="760px">
+<img src="https://user-images.githubusercontent.com/64642177/104927868-4da56580-59e5-11eb-902f-3a77319042e0.png" width="760px">
 
 # Features
 
