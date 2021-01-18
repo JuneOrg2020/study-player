@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../actions';
 
 import {HashRouter, Route, Link} from 'react-router-dom'; 
-import MenuScreen from '../components/MenuScreen';
 import InputFileScreen from '../components/InputFileScreen';
 import SoundSelectScreen from '../components/SoundSelectScreen';
 import DeleteSoundScreen from '../components/DeleteSoundScreen';
@@ -38,14 +37,18 @@ class StudyPlayerContainer extends Component {
   render() {
     return (
       <HashRouter>
-        <div className="menu-area">
-          <Link to='/'><div className="menu-button">Menu</div></Link>
+        <div className="menu-bar" style={{zIndex:100}}>
+          <div className="menu-area">
+            <Link to='/input'><div className="menu-item">Input File</div></Link>
+            <Link to='/select'><div className="menu-item">Sound Select</div></Link>
+            <Link to='/review'><div className="menu-item">Review Mode</div></Link>
+            <Link to='/delete'><div className="menu-item">Delete</div></Link>
+          </div>
         </div>
         <div className="content-area">
-          <Route exact path='/'      render={() => <MenuScreen parent={this.props}/> } />   
           <Route exact path='/input' render={() => <InputFileScreen parent={this.props}/> } />
           <Route exact path='/select' render={() => <SoundSelectScreen parent={this.props}/> } />
-          <Route exact path='/delete-sound' render={() => <DeleteSoundScreen parent={this.props}/> } />
+          <Route exact path='/delete' render={() => <DeleteSoundScreen parent={this.props}/> } />
           <Route exact path='/main' render={() => <MainPlayerScreen parent={this.props}/> } />
           <Route exact path='/review' render={() => <ReviewPlayerScreen parent={this.props}/> } />
           <div className="footer-area"></div>

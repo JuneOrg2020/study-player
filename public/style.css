@@ -9,13 +9,10 @@ a {
     text-decoration: none;
 }
 
-#root {
-    margin: auto;
-    width: 70%;
-}
-
 .content-area {
     padding-top: 35px;
+    margin: auto;
+    width: 70%;
 }
 
 .footer-area {
@@ -24,37 +21,25 @@ a {
     height: 50px;
 }
 
-.menu-area {
-    height:40px;
-    width:100%;
+.menu-bar {
+    height: 30px;
+    background: #3f51b5;
+    width: 100%;
     position: fixed;
-    background: #333;
 }
 
-.menu-button {
-    position: fixed;
-    background: #fff;
-    color: #00f;
-    font-weight: bold;
-    width: 100px;
-    padding: 4px;
-    margin: 2px;
-    border: 1px solid #000;
-    border-radius: 8px;
-    text-align: center;
+.menu-area {
+    margin: auto;
+    width:70%;
 }
 
 .menu-item {
-    background: #fff;
-    color: #00f;
-    font-weight: bold;
-    width: 250px;
+    float: left;
+    width: 125px;
     padding: 4px;
     margin: 2px;
-    border: 1px solid #000;
-    border-radius: 8px;
     text-align: center;
-    float: left;
+    color: #fff;
 }
 
 .sound-select-item {
