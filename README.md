@@ -10,7 +10,8 @@ This App's data is managed on Browser(localStorage).
 * It can save the volume for each sound file.
 * It can play the sound file from position that you set. <br/>
 For example, when you set the position at 00:04, if you press the playback key, this player starts from 00:04 instead of 00:00.  
-* It can save the sound file with play position and play volume. Saved files can be played on Review Page.
+* It can save the sound file with play position and play volume. Saved files can be played on Review Page.<br />
+* This app doesn't require installation work.  It can be used just by accessing html. <br />
 
 # Usage
 
