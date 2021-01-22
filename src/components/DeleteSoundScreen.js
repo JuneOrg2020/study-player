@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import { Button } from '@material-ui/core';
 
 class DeleteSoundScreen extends Component {
   
@@ -26,9 +26,11 @@ class DeleteSoundScreen extends Component {
 
     for (let i=0;i<studyPlayer.soundList.length;i++) {
         SoundListView.push(
-            <div className="delete-sound-item" onClick={(number) => this.DeleteSound(i)} key={i}>
-                {studyPlayer.soundList[i].title}
-            </div>
+          <Button variant="contained" component="span" color="primary"
+                  style={{margin: "4px"}}
+                  onClick={(number) => this.DeleteSound(i)} key={i}>
+            {studyPlayer.soundList[i].title}
+          </Button>
         );
     }
 

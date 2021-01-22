@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from '@material-ui/core';
 
 import DropFiles from '../components/DropFiles';
 
@@ -40,7 +41,7 @@ class InputFileScreen extends Component {
     ls.setItem('F_FILES_'+fMax, JSON.stringify(studyPlayer.inputFile.dropFiles));
     ls.setItem('F_MAX', ++fMax);
 
-    alert("Sound file data are registerd.");
+    alert("Sound files are registerd.");
     location.href = "";
   }
 
@@ -86,10 +87,14 @@ class InputFileScreen extends Component {
     return (
         <div>
             <h1>Input Sound File</h1>
-            <button className="register-button button-1" onClick={() => this.RegisterFiles()} >Register Files</button>
-            <div>
-                Directory Name:<input type="text" className="files-title" onChange={(e) => {studyPlayer.inputFile.title = e.target.value}} />
-            </div>
+            <Button variant="contained" component="span" color="primary" 
+                    style={{marginLeft: "4px"}}
+                    onClick={() => this.RegisterFiles()}>
+              Register Files
+            </Button>
+            <span style={{marginLeft: "4px"}}>
+              Directory Name:<input type="text" className="files-title" onChange={(e) => {studyPlayer.inputFile.title = e.target.value}} />
+            </span>
             <div className="upload_area">
             <div className="drop_area"
                 onDragOver={(e) => this.DragOverAction(e)}
