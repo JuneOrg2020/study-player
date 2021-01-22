@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import { Button } from '@material-ui/core';
 
 class SoundSelectScreen extends Component {
   
@@ -21,9 +21,11 @@ class SoundSelectScreen extends Component {
 
     for (let i=0;i<studyPlayer.soundList.length;i++) {
         SoundListView.push(
-            <div className="sound-select-item" onClick={(id) => this.SelectSound(studyPlayer.soundList[i].id)} key={i}>
-                {studyPlayer.soundList[i].title}
-            </div>
+            <Button variant="contained" component="span" color="primary"
+                    style={{margin: "4px"}}
+                    onClick={(id) => this.SelectSound(studyPlayer.soundList[i].id)} key={i}>
+              {studyPlayer.soundList[i].title}
+            </Button>
         );
     }
 

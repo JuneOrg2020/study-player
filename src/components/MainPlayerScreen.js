@@ -240,7 +240,7 @@ class MainPlayerScreen extends Component {
 
     return (
       <div>
-        <div className="header-area">
+        <div className="header-area" style={{paddingTop: "10px"}}>
           <div>{this.playTitle} CurrentPlay:{studyPlayer.mainPlayer.currentPlayFileName}</div>
           <audio
           className="audio-area"
