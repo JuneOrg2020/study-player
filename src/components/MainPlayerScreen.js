@@ -260,6 +260,7 @@ class MainPlayerScreen extends Component {
             <button>{studyPlayer.mainPlayer.speed}</button>
             <button onClick={(code) => this.ChangeSpeed(1)}>SpeedUp</button>
             <br/>
+            <button onClick={(Amt) => this.ChangeSpeedTo(100)}>1.0</button>
             <button onClick={(Amt) => this.ChangeSpeedTo(125)}>1.25</button>
             <button onClick={(Amt) => this.ChangeSpeedTo(150)}>1.5</button>
           </div>
